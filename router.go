@@ -12,4 +12,25 @@
 			得到当前连接
 			得到当前数据
 			新建一个Request请求
+
+	Router模块
+		抽象的IRouter
+			处理业务之前的方法
+				PreHandle(request IRequest)
+
+			处理业务的主方法
+				Handle(request IRequest)
+
+			处理业务之后的方法
+				PostHandle(request IRequest)
+
+		具体的BaseRouter
+			处理业务之前的方法
+				func (br *BaseRouter) PreHandle(request ziface.IRequest)
+
+			处理业务的主方法
+				func (br *BaseRouter) Handle(request ziface.IRequest)
+
+			处理业务之后的方法
+				func (br *BaseRouter) PostHandle(request ziface.IRequest)
 */
