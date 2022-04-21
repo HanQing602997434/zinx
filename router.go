@@ -33,4 +33,17 @@
 
 			处理业务之后的方法
 				func (br *BaseRouter) PostHandle(request ziface.IRequest)
+
+		zinx集成Router模块
+			IServer增添路由增添功能
+			Server类增添Router成员
+			Connection类绑定一个Router成员
+			在Connection调用已经注册的Router处理业务
+
+		使用zinxV0.3开发
+			1.创建一个server句柄，使用zinx的api
+			2.给当前zinx框架添加一个自定义的router
+			3.启动server
+
+			需要继承BaseRouter，实现PreHandle、Handle、PostHandle 3个方法
 */
