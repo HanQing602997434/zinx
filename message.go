@@ -26,4 +26,9 @@
 			func (dp *DataPack) Unpack(binaryData []byte) (ziface.IMessage, error)
 			先读取固定长度的head --> 消息内容的长度和消息的类型
 			再根据消息内容的长度，再次进行一次读写，从conn中读取消息的内容
+
+	将消息封装机制集成到zinx框架中
+		将Message添加到Request属性中
+		修改连接读取数据的机制，将之前单纯的读取byte改成拆包形式的读取按照TLV形式读取
+		给连接提供一个发包机制，将发送的消息进行打包再发送
 */
