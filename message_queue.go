@@ -27,8 +27,15 @@
 
 	3. 将之前的发送消息，全部改成把消息发送给消息队列和worker工作池来处理
 		定义一个方法，将消息发送给消息队列工作池的方法
+			func (mh *MsgHandler) SendMsgToTaskQueue(request ziface.IRequest)
+
 			1.保证每个Worker所受到的request任务是均衡的(平均分配)，让哪个Worker处理只需要将这个request请求
 			发送给对应的taskQueue即可。
 			
 			2.将消息直接发送给对应的channel
+
+	将消息队列机制集成到框架
+		1.开启并调用消息队列及Worker工作池，保证WorkerPool只有一个，应该在创建server模块的时候开启(在server listen之前添加)
+
+		2.将从客户端处理的消息，发送给当前的Worker工作池来处理(在已经处理完拆包，得到了request请求，交给工作池处理)
 */
