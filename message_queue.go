@@ -36,6 +36,8 @@
 
 	将消息队列机制集成到框架
 		1.开启并调用消息队列及Worker工作池，保证WorkerPool只有一个，应该在创建server模块的时候开启(在server listen之前添加)
+			s.MsgHandler.StartWorkerPool()
 
 		2.将从客户端处理的消息，发送给当前的Worker工作池来处理(在已经处理完拆包，得到了request请求，交给工作池处理)
+			c.MsgHandler.SendMsgToTaskQueue(&req)
 */
