@@ -4,7 +4,9 @@
 	创建一个连接管理模块
 		属性
 			已经创建的Connection集合
+				connections map[uint32] ziface.IConnection
 			针对map的互斥锁
+				connLock    sync.RWMutex
 
 		方法
 			添加连接
