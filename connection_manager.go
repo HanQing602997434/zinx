@@ -34,7 +34,9 @@
 	给zinx框架提供 创建连接之后/销毁连接之前 所要处理的一些业务 提供给用户注册Hook函数
 		添加的属性
 			该server创建连接之后自动调用的Hook函数
+				OnConnStart
 			该server销毁连接之后自动调用的Hook函数
+				OnConnStop
 
 		添加的方法
 */
