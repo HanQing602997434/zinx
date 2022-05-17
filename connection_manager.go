@@ -35,8 +35,21 @@
 		添加的属性
 			该server创建连接之后自动调用的Hook函数
 				OnConnStart
-			该server销毁连接之后自动调用的Hook函数
+			该server销毁连接之前自动调用的Hook函数
 				OnConnStop
 
 		添加的方法
+			注册OnConnStart钩子函数的方法
+				func (s *Server) SetOnConnStart(hookFunc func (connection ziface.IConnection))
+			注册OnConnStop钩子函数的方法
+				func (s *Server) SetOnConnStop(hookFunc func (connection ziface.IConnection))
+			调用OnConnStart钩子函数的方法
+				func (s *Server) CallOnConnStart(conn ziface.IConnection)
+			调用OnConnStop钩子函数的方法
+				func (s *Server) CallOnConnStop(conn ziface.IConnection)
+
+		在Conn创建之后调用OnConnStart
+			在conn.Start()中调用
+		在Conn销毁之前调用OnConnStop
+			在conn.Stop()中调用
 */
