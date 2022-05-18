@@ -36,12 +36,19 @@
 		AOI管理格子(地图)数据类型AOIManager
 			属性
 				区域的左边界坐标
+					MinX int
 				区域的右边界坐标
+					MaxX int
 				X方向格子的数量
+					CntsX int
 				区域的上边界坐标
+					MinY int
 				区域的下边界坐标
+					MaxY int
 				Y方向格子的数量
+					CntsY int
 				当前区域中有哪些格子map-key = 格子ID, value = 格子对象
+					grids map[int] *Grid
 
 			方法
 				初始化一个AOI管理区域模块
