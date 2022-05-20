@@ -52,17 +52,29 @@
 
 			方法
 				初始化一个AOI管理区域模块
+					func NewAOIManager(minX, maxX, cntsX, minY, maxY, cntsY int) *AOIManager
 				调式使用——打印当前AOI模块
+					func (m *AOIManager) String() string
 				得到每个格子在X轴方向的宽度
+					func (m *AOIManager) gridWidth() int
 				得到每个格子在Y轴方向的长度
+					func (m *AOIManager) gridLength() int
 				根据GID得到当前GID的九宫格的GID集合
+					func (m *AOIManager) GetSurroundGridsByGid(gID int) (grids []*Grid)
 				通过x，y横纵坐标得到GID格子编号
+					func (m *AOIManager) GetGidByPos(x, y float32) int
 				通过x，y横纵坐标得到周边九宫格全部的playerIDs
+					func (m *AOIManager) GetPidsByPos(x, y float32) (playerIDs []int)
 				添加一个PlayerID到一个格子中
+					func (m *AOIManager) AddPidToGrid(pID, gID int)
 				移除一个格子中的PlayerID
+					func (m *AOIManager) RemovePidFromGrid(pID, gID int)
 				通过GID获取全部的PlayerID
+					func (m *AOIManager) GetPidsByGid(gID int) (playerIDs []int)
 				通过坐标将一个Player添加到一个格子中
+					func (m *AOIManager) AddToGridByPos(pID int, x, y float32)
 				通过坐标将一个Player从一个格子中删除
+					func (m *AOIManager) RemoveFromGridByPos(pID int, x, y float32)
 	
 	数据传输协议ProtocolBuffer
 
