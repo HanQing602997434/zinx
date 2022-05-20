@@ -53,14 +53,16 @@
 			方法
 				初始化一个AOI管理区域模块
 				调式使用——打印当前AOI模块
-				根据格子ID得到当前格子的周围九宫格信息
+				得到每个格子在X轴方向的宽度
+				得到每个格子在Y轴方向的长度
+				根据GID得到当前GID的九宫格的GID集合
+				通过x，y横纵坐标得到GID格子编号
+				通过x，y横纵坐标得到周边九宫格全部的playerIDs
 				添加一个PlayerID到一个格子中
 				移除一个格子中的PlayerID
 				通过GID获取全部的PlayerID
 				通过坐标将一个Player添加到一个格子中
 				通过坐标将一个Player从一个格子中删除
-				通过Player坐标得到当前Player周边九宫格全部的PlayerIDs
-				通过坐标获取对应的玩家所在的GID
 	
 	数据传输协议ProtocolBuffer
 
